@@ -1,0 +1,21 @@
+Battle Flow
+
+1.Team members placed
+2.Both teams select action
+3.Order Combatants from highest to lowest reaction
+4.
+		
+		
+		
+		
+		
+		
+	Combatant 1;			Combatant 1;	
+-	reaction 	= 5			reaction 	= 8	
++	speed 		= 10		speed 		= 6	
+=	strength 	= 8			strength 	= 11	
+		
+		
+Instant		
+Combatant 1:	-----
+Combatant 2:	--------
