@@ -24,7 +24,7 @@ public class Terrain : MonoBehaviour
 		
 		this.mesh = new TerrainMesh(this);
 		
-		this.GenerateTest();
+		this.Generate();
 		this.UpdateMesh();
 		
 	}
@@ -44,10 +44,10 @@ public class Terrain : MonoBehaviour
 			}
 		}
 		
+		blockGrid[0, 2, 0] = new Dirt();
 		blockGrid[0, 0, 0] = new Dirt();
-		blockGrid[1, 0, 0] = new Dirt();
-		blockGrid[0, 1, 0] = new Dirt();
-		blockGrid[0, 0, 2] = new Dirt();
+		blockGrid[0, 0, 0] = new Dirt();
+		blockGrid[0, 0, 0] = new Dirt();
 		
 	}
 	
@@ -61,17 +61,21 @@ public class Terrain : MonoBehaviour
 			{
 				for(int _z = 0; _z < this.blockGrid.GetLength(2); _z += 1)
 				{
-					//GridIndex gridIndex = new GridIndex(_x, _y, _z);
 					Block block = new Block();
-					if (_y > groundLevel)
+					if (_y == 0)
+					{
+						block = new Air();
+					}
+					
+					if (_y >= groundLevel)
 					{
 						block = new Air();
 					}
 
-					if (_y <= groundLevel)
+					if (_y < groundLevel)
 					{
 						int r = Venge.Random.DiceRoll();
-						print(r);
+						
 						if (r > 3)
 						{
 							block = new Air();

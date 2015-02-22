@@ -11,7 +11,7 @@ namespace Venge.Blocks
 		public Dirt()
 		{
 			this.Name = "Dirt Block";
-			this.TexturePos = new Vector2(0, 1);
+			this.TexturePos = new Vector2(1, 0);
 		}
 	}
 }
