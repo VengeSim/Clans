@@ -7,8 +7,13 @@ namespace Venge.Blocks
 {
 	public class Air : Block
 	{
-		
 		public Air()
+		{
+			this.Name = "Air Block";
+			this.TexturePos = new Vector2(0, 0);
+		}
+
+		public Air(GridIndex index) : base(index)
 		{
 			this.Name = "Air Block";
 			this.TexturePos = new Vector2(0, 0);

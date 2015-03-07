@@ -61,15 +61,18 @@ public class Terrain : MonoBehaviour
 			{
 				for(int _z = 0; _z < this.blockGrid.GetLength(2); _z += 1)
 				{
-					Block block = new Block();
+
+					GridIndex index = new GridIndex( _x, _y, _z);
+
+					Block block = new Block(index);
 					if (_y == 0)
 					{
-						block = new Air();
+						block = new Air(index);
 					}
 					
 					if (_y >= groundLevel)
 					{
-						block = new Air();
+						block = new Air(index);
 					}
 
 					if (_y < groundLevel)
@@ -78,9 +81,9 @@ public class Terrain : MonoBehaviour
 						
 						if (r > 3)
 						{
-							block = new Air();
+							block = new Air(index);
 						}else{
-							block = new Dirt();
+							block = new Dirt(index);
 						}
 					}
 					
